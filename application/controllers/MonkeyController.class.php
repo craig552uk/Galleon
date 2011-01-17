@@ -8,6 +8,7 @@ class MonkeyController{
 
     function index(){
         echo "<p>Monkey - Default Function</p>";
+        echo Html::link('a Link','file');
     }
     
     function feed($A, $B, $C){
