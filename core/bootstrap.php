@@ -18,21 +18,45 @@ function callHook(){
         $urlFunction    = '';
     }
     
-    $galleonClass = ucwords($urlClass).'Controller';
+    // Generate controller class name
+    $controllerName = ucwords($urlClass).'Controller';
     
-    echo "<pre>";
-    echo "Class: ".$urlClass."\n";
-    echo "Galleon Class: ".$galleonClass."\n";
-    echo "Function: ".$urlFunction."\n";
-    print_r($urlParams);
-    echo "</pre>";
+    if (class_exists($controllerName)){
+    
+        // Create object
+        $controller = new $controllerName;
+
+        if (method_exists($controller, $urlFunction)){
+        
+            // Call function
+            call_user_func_array(array($controller, $urlFunction), array_pad($urlParams, 10, ''));
+            
+        }else{
+        
+            if (method_exists($controller, 'index')){
+                // Call default function
+                call_user_func_array(array($controller, 'index'), $arr = array());
+            }else{
+                /* Function FAIL */
+            }
+        }
+    }else{
+        /* Class FAIL */
+    }    
 }
 
 /*
     Autoload classes as needed
 */
-function __autoload($className){
-
+function __autoload($className){    
+    $classPath['lib']        = ROOT . DS . 'lib' . DS . $className . '.class.php';
+    $classPath['controller'] = ROOT . DS . 'application' . DS . 'controllers' . DS . $className . '.class.php';
+    $classPath['model']      = ROOT . DS . 'application' . DS . 'models' . DS . $className . '.class.php';
+    $classPath['view']       = ROOT . DS . 'application' . DS . 'views' . DS . $className . '.class.php';
+    
+    foreach ($classPath as $path){
+        if (file_exists($path)) { include_once($path); }
+    }
 }
 
 callHook();
