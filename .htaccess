@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On    
+    
+    RewriteCond %{REQUEST_FILENAME} !-f         # Exclude file requests
+    RewriteCond %{REQUEST_FILENAME} !-d         # Exclude directory requests
+    
+    RewriteRule ^(.*)$ core/$1                  # Redirect all requests to core subfolder
+</IfModule>
