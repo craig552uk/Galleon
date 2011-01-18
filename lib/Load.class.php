@@ -39,9 +39,9 @@ class Load {
     */
     public static function library($name){
         $path = ROOT . DS . 'lib' . DS . $name;
-        if (file_exists($path.'.lib.php'))  { include($path.'.lib.php'); }
-        if (file_exists($path.'.php'))      { include($path.'.php'); }
-        if (file_exists($path))             { include($path); }
+        if (file_exists($path.'.lib.php'))  { include_once($path.'.lib.php'); }
+        if (file_exists($path.'.php'))      { include_once($path.'.php'); }
+        if (file_exists($path))             { include_once($path); }
     }
     
     /*
@@ -51,9 +51,9 @@ class Load {
     */
     public static function config($name){
         $path = ROOT . DS . 'config' . DS . $name;
-        if (file_exists($path.'.config.php'))  { include($path.'.config.php'); }
-        if (file_exists($path.'.php'))      { include($path.'.php'); }
-        if (file_exists($path))             { include($path); }
+        if (file_exists($path.'.config.php'))   { include_once($path.'.config.php'); }
+        if (file_exists($path.'.php'))          { include_once($path.'.php'); }
+        if (file_exists($path))                 { include_once($path); }
     }
 
 }
