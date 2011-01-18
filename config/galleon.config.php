@@ -8,17 +8,16 @@
 */
 
 /*
-    Stylesheets
-    Key is stylesheet name
-        File extension required if not .css
-    Values is enablement
-        true    Enable stylesheet
-        fasle   Disable stylesheet
+    Stylesheets combined in to one HTTP request from server.com/stylesheet
+    Key     stylesheet name
+    Value   stylesheet enabled
 */
 $config['css']['meyer-reset'] = true;
 $config['css']['desktop-styles'] = true;
 $config['css']['smartphone-styles'] = true;
 $config['css']['ipad-styles'] = true;
+
+
 /*
     Load additonal config files
 */
