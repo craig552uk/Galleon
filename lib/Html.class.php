@@ -10,14 +10,14 @@ class Html {
         Return anchor link
     */
     public static function anchor($label, $url){
-        return "<a href=\"$url\">$label</a>";
+        echo "<a href=\"$url\">$label</a>";
     }
     
     /*
         Alias of anchor
     */
     public static function link($label, $url){
-        return self::anchor($label, $url);
+        echo self::anchor($label, $url);
     }
 
 }
