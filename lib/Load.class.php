@@ -16,6 +16,7 @@ class Load {
         @param  array   Array of data to access from within view
     */
     public static function view($name, $data=array()){
+        global $config;
     
         // Set defaults where necessary
         if (!isset($data['title'])) { $data['title'] = ''; }
