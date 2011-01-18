@@ -12,6 +12,21 @@
 */
 
 class Html {
+    /*
+    
+    */
+    public static function getJS(){
+        global $config;
+        echo "<script src=\"".$config['general']['domain']."/javascript\"></script>\n";
+    }
+    
+    /*
+    
+    */
+    public static function getCSS(){
+        global $config;
+        echo "<link rel=\"stylesheet\" href=\"".$config['general']['domain']."/stylesheet\">\n";
+    }
 
     /*
         Draw anchor link
