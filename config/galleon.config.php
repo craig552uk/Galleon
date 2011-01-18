@@ -8,15 +8,37 @@
 */
 
 /*
+    General application settings
+*/
+
+$config['general']['name']              = 'Galleon';
+$config['general']['author']            = 'Craig Russell';
+$config['general']['version']           = '0.1';
+$config['general']['description']       = 'Galleon PHP MVC Framework';
+$config['general']['keywords']          = 'php, mvc, framework';
+$config['general']['domain']            = 'http://localhost/Galleon';
+
+
+/*
     Stylesheets combined in to one HTTP request from server.com/stylesheet
     Key     stylesheet name
     Value   stylesheet enabled
 */
-$config['css']['meyer-reset'] = true;
-$config['css']['desktop-styles'] = true;
-$config['css']['smartphone-styles'] = true;
-$config['css']['ipad-styles'] = true;
+$config['css']['meyer-reset.css']       = true;
+$config['css']['desktop-styles.css']    = true;
+$config['css']['smartphone-styles.css'] = true;
+$config['css']['ipad-styles.css']       = true;
 
+/*
+    Image library
+    For each image specify an id and image files at various scales (0-100)
+*/
+// HTML5 Logo images http://www.w3.org/html/logo/
+$config['image']['html5logo'][100]      = 'HTML5_Logo_512.png';
+$config['image']['html5logo'][50]       = 'HTML5_Logo_256.png';
+$config['image']['html5logo'][25]       = 'HTML5_Logo_128.png';
+$config['image']['html5logo'][12]       = 'HTML5_Logo_64.png';
+$config['image']['html5logo'][6]        = 'HTML5_Logo_32.png';
 
 /*
     Load additonal config files
