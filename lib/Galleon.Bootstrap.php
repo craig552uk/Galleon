@@ -44,11 +44,27 @@ function callHook(){
                 // Call default function
                 call_user_func_array(array($controller, 'index'), $arr = array());
             }else{
-                /* Function FAIL */
+                // Create default controller object
+                $controller = new DefaultController;
+                call_user_func_array(array($controller, 'error'), $arr = array('404'));
             }
         }
     }else{
-        /* Class FAIL */
+        // Create default controller object
+        $controller = new DefaultController;
+
+        if (method_exists($controller, $urlFunction)){
+        
+            // Call function (Parameters are padded to prevent errors from short urls)
+            call_user_func_array(array($controller, $urlFunction), array_pad($urlParams, 10, NULL));
+            
+        }else{
+        
+            if (method_exists($controller, 'index')){
+                // Call default function
+                call_user_func_array(array($controller, 'index'), $arr = array());
+            }
+        }
     }    
 }
 
