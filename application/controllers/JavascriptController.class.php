@@ -24,4 +24,9 @@ class JavascriptController{
                 { include_once($jspath . $file); }
         }
     }
+    
+    static function _getJavascriptUrl(){
+        global $config;
+        echo $config['general']['domain'].'/javascript';
+    }
 }

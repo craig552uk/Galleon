@@ -22,4 +22,9 @@ class StylesheetController{
                 { include_once($stylespath . $file); }
         }
     }
+    
+    static function _getStylesheetUrl(){
+        global $config;
+        echo $config['general']['domain'].'/stylesheet';
+    }
 }
