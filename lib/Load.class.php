@@ -54,6 +54,9 @@ class Load {
         if (file_exists($path.'.config.php'))   { include_once($path.'.config.php'); }
         if (file_exists($path.'.php'))          { include_once($path.'.php'); }
         if (file_exists($path))                 { include_once($path); }
+        
+        return array_diff_key(get_defined_vars(), array('name'=>'','path'=>''));
     }
 
 }
+

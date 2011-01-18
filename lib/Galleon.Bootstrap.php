@@ -70,7 +70,7 @@ function __autoload($className){
 Load::library('Common');
 
 /* Load configuration */
-Load::config('galleon');
+extract(Load::config('galleon'));
 
 /* Run callHook */
 callHook();

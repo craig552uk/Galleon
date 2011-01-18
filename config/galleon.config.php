@@ -7,11 +7,22 @@
 
 */
 
-
-
+/*
+    Stylesheets
+    Array of stylesheets
+    Key is stylesheet name
+        File extension required if not .css
+    Values is enablement
+        true    Enable stylesheet
+        fasle   Disable stylesheet
+*/
+$stylesheets['style1'] = true;
+$stylesheets['style2'] = true;
 
 /*
     Load additonal config files
 */
 
-Load::config('monkey');
+extract(Load::config('monkey'));
+
+devecho("Galleon config loaded\n");
