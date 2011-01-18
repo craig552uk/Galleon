@@ -1,6 +1,6 @@
 <?php
 /*
-    The main Galleon workhorse script.
+    The main Galleon work horse script.
 */
 
 
@@ -66,5 +66,7 @@ function __autoload($className){
     }
 }
 
-
+/* Load main configuration file */
+Load::config('galleon');
+/* Run callHook */
 callHook();
