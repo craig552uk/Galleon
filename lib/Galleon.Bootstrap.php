@@ -35,8 +35,8 @@ function callHook(){
 
         if (method_exists($controller, $urlFunction)){
         
-            // Call function (Parameters are padded to prevent errors from short urls)
-            call_user_func_array(array($controller, $urlFunction), array_pad($urlParams, 10, NULL));
+            // Call function
+            call_user_func_array(array($controller, $urlFunction), $urlParams);
             
         }else{
         
@@ -55,8 +55,8 @@ function callHook(){
 
         if (method_exists($controller, $urlFunction)){
         
-            // Call function (Parameters are padded to prevent errors from short urls)
-            call_user_func_array(array($controller, $urlFunction), array_pad($urlParams, 10, NULL));
+            // Call function
+            call_user_func_array(array($controller, $urlFunction), $urlParams);
             
         }else{
         
