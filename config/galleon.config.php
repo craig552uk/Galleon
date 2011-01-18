@@ -9,15 +9,14 @@
 
 /*
     Stylesheets
-    Array of stylesheets
     Key is stylesheet name
         File extension required if not .css
     Values is enablement
         true    Enable stylesheet
         fasle   Disable stylesheet
 */
-$stylesheets['style1'] = true;
-$stylesheets['style2'] = true;
+$config['css']['style1'] = true;
+$config['css']['style2'] = true;
 
 /*
     Load additonal config files
