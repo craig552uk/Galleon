@@ -66,7 +66,11 @@ function __autoload($className){
     }
 }
 
-/* Load main configuration file */
+/* Load libraries */
+Load::library('Common');
+
+/* Load configuration */
 Load::config('galleon');
+
 /* Run callHook */
 callHook();
