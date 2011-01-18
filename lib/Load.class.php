@@ -13,9 +13,17 @@ class Load {
         load and display a view
         
         @param  string  View name
-        @param  array   Pointer to data object to interact with in view
+        @param  array   Array of data to access from within view
     */
-    public static function view($name, &$data=array()){    
+    public static function view($name, $data=array()){
+    
+        // Set defaults where necessary
+        if (!isset($data['title'])) { $data['title'] = ''; }
+    
+        // Redefine array as single variables
+        foreach ($data as $k => $v) { $$k = $v; }
+    
+        // Find and display view
         $path = ROOT . DS . 'application' . DS . 'views' . DS. $name;
         if (file_exists($path . '.view.php'))   { include($path . '.view.php'); }
         if (file_exists($path . '.php'))        { include($path . '.php'); }
