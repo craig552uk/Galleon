@@ -24,10 +24,19 @@ $config['general']['domain']            = 'http://localhost/Galleon';
     Key     stylesheet name
     Value   stylesheet enabled
 */
-$config['css']['meyer-reset.css']       = true;
+$config['css']['meyer-reset-2-0b2.css'] = true;
 $config['css']['desktop-styles.css']    = true;
 $config['css']['smartphone-styles.css'] = true;
 $config['css']['ipad-styles.css']       = true;
+
+/*
+    Javascript libraries combined in to one HTTP request
+    Key     JS library name
+    Value   Js library enabled
+*/
+$config['js']['modernizr-1.6.min.js']   = true;
+$config['js']['jquery-1.4.4.min.js']    = true;
+
 
 /*
     Image library
