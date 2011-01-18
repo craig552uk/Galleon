@@ -1,7 +1,14 @@
 <?php
+/*
+    The main Galleon workhorse script.
+*/
 
 
-
+/*
+    Interprets SEO friendly urls
+    Finds the correct controller class and creates it
+    Calls the controller class function with the appropriate parameters
+*/
 function callHook(){
     
     /*  Break apart SEO friendly urls 
@@ -28,8 +35,8 @@ function callHook(){
 
         if (method_exists($controller, $urlFunction)){
         
-            // Call function
-            call_user_func_array(array($controller, $urlFunction), array_pad($urlParams, 10, ''));
+            // Call function (Parameters are padded to prevent errors from short urls)
+            call_user_func_array(array($controller, $urlFunction), array_pad($urlParams, 10, NULL));
             
         }else{
         
@@ -58,5 +65,6 @@ function __autoload($className){
         if (file_exists($path)) { include_once($path); }
     }
 }
+
 
 callHook();
