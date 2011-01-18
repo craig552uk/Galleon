@@ -15,9 +15,10 @@
         true    Enable stylesheet
         fasle   Disable stylesheet
 */
-$config['css']['style1'] = true;
-$config['css']['style2'] = true;
-
+$config['css']['meyer-reset'] = true;
+$config['css']['desktop-styles'] = true;
+$config['css']['smartphone-styles'] = true;
+$config['css']['ipad-styles'] = true;
 /*
     Load additonal config files
 */
