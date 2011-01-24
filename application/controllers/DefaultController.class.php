@@ -6,11 +6,14 @@
 class DefaultController {
 
     function index(){
-        echo "Index";
+        $data['title'] = "Default Page";
+        Load::view('default', $data);
     }
     
-    function error($errCode){
-        echo "Error $errCode";
+    function error($error_code = "404"){
+        $data['title'] = "Error";
+        $data['error_code'] = $error_code;
+        Load::view('error', $data);
     }
 
 }
