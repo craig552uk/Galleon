@@ -35,8 +35,8 @@ function callHook(){
 
         if (method_exists($controller, $urlFunction)){
         
-            // Call function (Parameters are padded to prevent errors from short urls)
-            call_user_func_array(array($controller, $urlFunction), array_pad($urlParams, 10, NULL));
+            // Call function
+            call_user_func_array(array($controller, $urlFunction), $urlParams);
             
         }else{
         
@@ -44,11 +44,46 @@ function callHook(){
                 // Call default function
                 call_user_func_array(array($controller, 'index'), $arr = array());
             }else{
-                /* Function FAIL */
+                // Create default controller object
+                $controller = new DefaultController;
+                call_user_func_array(array($controller, 'error'), $arr = array('404'));
             }
         }
     }else{
-        /* Class FAIL */
+        // Create default controller object
+        $controller = new DefaultController;
+
+        if (method_exists($controller, $urlFunction)){
+        
+            // Call function
+            call_user_func_array(array($controller, $urlFunction), $urlParams);
+            
+        }else{
+            /*
+                The next few lines reassign values from the url
+                as though no class parameter were given.
+                This allows tidier urls for the default controller
+                Compare:
+                    galleon.com/default/error/404
+                    galleon.com/error/404
+            */
+            
+            // Push function string back on to head of params
+            $urlParams = array_reverse($urlParams);
+            array_push($urlParams, $urlFunction);
+            $urlParams = array_reverse($urlParams);
+            
+            // Push class back on to function
+            $urlFunction = $urlClass;
+        
+            if (method_exists($controller, $urlFunction)){
+                // Call function
+                call_user_func_array(array($controller, $urlFunction), $urlParams);
+            }else{
+                // Call default function
+                call_user_func_array(array($controller, 'index'), array());
+            }
+        }
     }    
 }
 
