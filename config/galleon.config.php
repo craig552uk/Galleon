@@ -49,10 +49,3 @@ $config['image']['html5logo'][25]       = 'HTML5_Logo_128.png';
 $config['image']['html5logo'][12]       = 'HTML5_Logo_64.png';
 $config['image']['html5logo'][6]        = 'HTML5_Logo_32.png';
 
-/*
-    Load additonal config files
-*/
-
-extract(Load::config('monkey'));
-
-devecho("Galleon config loaded\n");
