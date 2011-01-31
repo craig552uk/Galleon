@@ -1,3 +1,0 @@
-<?php
-
-$monkeyvar='banana';

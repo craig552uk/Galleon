@@ -8,4 +8,4 @@ define('ROOT', dirname(__FILE__));
 define('DEVELOPMENT_ENVIRONMENT', false);
 
 /* Lets get on with it! */
-include_once (ROOT . DS . 'lib' . DS . 'Galleon.Bootstrap.php');
+include_once (ROOT . DS . 'ga_system' . DS . 'ga_bootstrap.php');
