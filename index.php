@@ -5,4 +5,4 @@ define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(__FILE__));
 
 /* Lets get on with it! */
-include_once (ROOT . DS . 'lib' . DS . 'Galleon.Bootstrap.php');
+include_once (ROOT . DS . 'ga_system' . DS . 'ga_bootstrap.php');

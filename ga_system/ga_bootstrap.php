@@ -102,10 +102,11 @@ function __autoload($className){
 }
 
 /* Load libraries */
-Load::library('Common');
+include_once (ROOT . DS . 'ga_system' . DS . 'ga_common.lib.php');
+// Write libraries for accessing common files js/css and data meta author etc
 
 /* Load configuration */
-extract(Load::config('galleon'));
+include_once (ROOT . DS . 'ga_config.php');
 
 /* Run callHook */
 callHook();
