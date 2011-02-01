@@ -64,6 +64,7 @@ function galleonGetURL(){
 /*
     Finds the correct controller class and creates it
     Calls the controller class function with the appropriate parameters
+    If class or function cannot be found show 404 error
 */
 function galleonCallHook($url){
 
@@ -72,59 +73,39 @@ function galleonCallHook($url){
     
     if (class_exists($controllerName)){
     
-        // Create object
+        // Create requested class object
         $controller = new $controllerName;
 
         if (method_exists($controller, $url['function'])){
         
-            // Call function
+            // Call requested function
             call_user_func_array(array($controller, $url['function']), $url['params']);
             
         }else{
         
             if (method_exists($controller, 'index')){
                 // Call default function
-                call_user_func_array(array($controller, 'index'), $arr = array());
+                call_user_func_array(array($controller, 'index'), array());
+                
             }else{
-                // Create default controller object
-                $controller = new DefaultController;
-                call_user_func_array(array($controller, 'error'), $arr = array('404'));
+                // Call 404 Error
+                $controller = new ErrorController;
+                call_user_func_array(array($controller, 'error404'), array());
             }
         }
     }else{
-        // Create default controller object
-        $controller = new DefaultController;
+        // Class unknown
+        // Create ErrorController object
+        $controller = new Error;
 
-        if (method_exists($controller, $url['function'])){
+        if (method_exists($controller, 'error'.$url['function'])){
         
-            // Call function
-            call_user_func_array(array($controller, $url['function']), $url['params']);
+            // Call specified error function
+            call_user_func_array(array($controller, 'error'.$url['function']), array());
             
         }else{
-            /*
-                The next few lines reassign values from the url
-                as though no class parameter were given.
-                This allows tidier urls for the default controller
-                Compare:
-                    galleon.com/default/error/404
-                    galleon.com/error/404
-            */
-            
-            // Push function string back on to head of params
-            $url['params'] = array_reverse($url['params']);
-            array_push($url['params'], $url['function']);
-            $url['params'] = array_reverse($url['params']);
-            
-            // Push class back on to function
-            $url['function'] = $url['class'];
-        
-            if (method_exists($controller, $url['function'])){
-                // Call function
-                call_user_func_array(array($controller, $url['function']), $url['params']);
-            }else{
-                // Call default function
-                call_user_func_array(array($controller, 'index'), array());
-            }
+            // Call 404 error function
+            call_user_func_array(array($controller, 'error404'), array());
         }
     }    
 }
