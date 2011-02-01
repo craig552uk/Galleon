@@ -6,6 +6,6 @@
 </head>
 <body>
     <h1><?php echo $title; ?></h1>
-    <h2><?php echo $error_code; ?></h2>
+    <p><?php echo $message; ?></p>
 </body>
 </html>

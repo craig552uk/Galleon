@@ -4,19 +4,16 @@
     Chuck any includes and mission critical function calls in here
 */
 
-/* 
-    Load library files
+/*
+    Load Galleon Class and Library files
 */
 include_once (ROOT . DS . 'ga_system' . DS . 'ga_common.lib.php');
-
+include_once (ROOT . DS . 'ga_system' . DS . 'ga_loader.class.php');
 
 /* 
     Load configuration files
 */
-// General configuration
 include_once (ROOT . DS . 'ga_config.php');
-
-// Defined errors
 include_once (ROOT . DS . 'ga_errors.php');
 
 /*

@@ -90,33 +90,18 @@ function galleonCallHook($url){
                 
             }else{
                 // Call 404 Error
-                galleonError(404);
+                Show::error(404);
             }
         }
     }else{
         // No valid controller class
         if ($url['class']=='error'){
             // Call error
-            galleonError($url['function']);
+            Show::error($url['function']);
         }else{
             // 404 Error
-            galleonError(404);
+            Show::error(404);
         }
-    }    
-}
-
-/*
-    Call an error defined in ga_errors.php
-*/
-function galleonError($code){
-    global $error;
-    
-    if (isset($error[$code])){
-        // TODO Format error through view
-        echo $error[$code]['title'].' '.$error[$code]['message'];
-    }else{
-        // Return default error
-        galleonError(000);
     }    
 }
 
