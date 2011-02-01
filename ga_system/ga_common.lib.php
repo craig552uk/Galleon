@@ -3,10 +3,11 @@
 /*
     Common functions
     
-    h($string)
-    galleonGetURL()
-    galleonCallHook($url)
-    __autoload($className)
+    h($string)                      // Alias of htmlspecialchars
+    galleonGetURL()                 // Interprets URL
+    galleonCallHook($url)           // Call requested class function
+    galleonError($code)             // Return error message
+    __autoload($className)          // Magic function for dynamic class loading
 */
 
 /*
@@ -89,24 +90,33 @@ function galleonCallHook($url){
                 
             }else{
                 // Call 404 Error
-                $controller = new ErrorController;
-                call_user_func_array(array($controller, 'error404'), array());
+                galleonError(404);
             }
         }
     }else{
-        // Class unknown
-        // Create ErrorController object
-        $controller = new Error;
-
-        if (method_exists($controller, 'error'.$url['function'])){
-        
-            // Call specified error function
-            call_user_func_array(array($controller, 'error'.$url['function']), array());
-            
+        // No valid controller class
+        if ($url['class']=='error'){
+            // Call error
+            galleonError($url['function']);
         }else{
-            // Call 404 error function
-            call_user_func_array(array($controller, 'error404'), array());
+            // 404 Error
+            galleonError(404);
         }
+    }    
+}
+
+/*
+    Call an error defined in ga_errors.php
+*/
+function galleonError($code){
+    global $error;
+    
+    if (isset($error[$code])){
+        // TODO Format error through view
+        echo $error[$code]['title'].' '.$error[$code]['message'];
+    }else{
+        // Return default error
+        galleonError(000);
     }    
 }
 
@@ -123,4 +133,5 @@ function __autoload($className){
         if (file_exists($path)) { include_once($path); }
     }
 }
+
 
