@@ -7,7 +7,7 @@ class DefaultController {
 
     function index(){
         $data['title'] = "Default Page";
-        echo "DEFAULT PAGE";
+        Show::view('default', $data);
     }
 
 }
