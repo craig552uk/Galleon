@@ -18,4 +18,6 @@ include_once (ROOT . DS . 'ga_config.php');
 /*
     Call functions
 */
-callHook();
+
+// Request Call Hook
+galleonCallHook(galleonGetURL());

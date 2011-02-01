@@ -8,14 +8,21 @@
 */
 
 /*
-    General application settings
+    Application Meta Settings
 */
 
-$config['general']['name']              = 'Galleon';
-$config['general']['author']            = 'Craig Russell';
-$config['general']['version']           = '0.1';
-$config['general']['description']       = 'Galleon PHP MVC Framework';
-$config['general']['keywords']          = 'php, mvc, framework';
-$config['general']['domain']            = 'http://localhost/Galleon';
+$config['meta']['name']              = 'Galleon';
+$config['meta']['author']            = 'Craig Russell';
+$config['meta']['email']             = 'craig@craig-russell.co.uk';
+$config['meta']['version']           = 0.1;
+$config['meta']['description']       = 'Galleon PHP MVC Framework';
+$config['meta']['keywords']          = 'php, mvc, framework';
 
+
+/*
+    Application Instalation Configuration
+*/
+$config['galleon']['domain']            = 'http://localhost';
+$config['galleon']['root_path']         = '/Galleon';
+$config['galleon']['seo_urls']          = true;
 
