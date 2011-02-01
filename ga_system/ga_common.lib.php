@@ -4,9 +4,10 @@
     Common functions
     
     h($string)                      // Alias of htmlspecialchars
-    galleonGetURL()                 // Interprets URL
-    galleonCallHook($url)           // Call requested class function
-    galleonError($code)             // Return error message
+    ga_parse_url()                  // Interprets URL
+    ga_call_hook($url)              // Call requested class function
+    ga_show_error($code)            // Show error message
+    ga_show_view($name, $data)      // Show view
     __autoload($className)          // Magic function for dynamic class loading
 */
 
@@ -23,7 +24,7 @@ function h($string){
         Or Standard query string
     Returns nested array of requested class, function and params
 */
-function galleonGetURL(){
+function ga_parse_url(){
     global $config;
     
     if ($config['galleon']['seo_urls']){
@@ -67,7 +68,7 @@ function galleonGetURL(){
     Calls the controller class function with the appropriate parameters
     If class or function cannot be found show 404 error
 */
-function galleonCallHook($url){
+function ga_call_hook($url){
 
     // Generate controller class name
     $controllerName = ucwords($url['class']).'Controller';
@@ -90,21 +91,56 @@ function galleonCallHook($url){
                 
             }else{
                 // Call 404 Error
-                Show::error(404);
+                ga_show_error(404);
             }
         }
     }else{
         // No valid controller class
         if ($url['class']=='error'){
             // Call error
-            Show::error($url['function']);
+            ga_show_error($url['function']);
         }else{
             // 404 Error
-            Show::error(404);
+            ga_show_error(404);
         }
     }    
 }
 
+/*
+    Show a view
+    
+    @param  string  View name
+    @param  array   Array of data to be accessible from within view
+*/
+function ga_show_view($name, $data=array()){
+
+    // Redefine array as single variables
+    foreach ($data as $k => $v) { $$k = $v; }
+
+    // Find and display view
+    $path = ROOT . DS . 'app' . DS . 'views' . DS. $name;
+    if (file_exists($path . '.view.php'))   { include($path . '.view.php'); }
+    if (file_exists($path . '.php'))        { include($path . '.php'); }
+    if (file_exists($path . '.html'))       { include($path . '.html'); }
+    if (file_exists($path . '.htm'))        { include($path . '.htm'); }
+    if (file_exists($path))                 { include($path); }
+}
+
+/*
+    Call an error defined in ga_errors.php
+*/
+function ga_show_error($code){
+    global $error;
+
+    if (isset($error[$code])){
+        // Format error through view
+        ga_show_view('error', $error[$code]);
+    }else{
+        // Return default error
+        ga_show_error(000);
+    }    
+}
+    
 /*
     Autoload classes as needed
 */

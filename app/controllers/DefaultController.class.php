@@ -7,7 +7,7 @@ class DefaultController {
 
     function index(){
         $data['title'] = "Default Page";
-        Show::view('default', $data);
+        ga_show_view('default', $data);
     }
 
 }
