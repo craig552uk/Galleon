@@ -127,10 +127,10 @@ function ga_show_error($code){
     Autoload classes as needed
 */
 function __autoload($className){    
-    $classPath['lib']        = ROOT . DS . 'lib' . DS . $className . '.class.php';
-    $classPath['controller'] = ROOT . DS . 'app' . DS . 'controllers' . DS . $className . '.class.php';
-    $classPath['model']      = ROOT . DS . 'app' . DS . 'models' . DS . $className . '.class.php';
-    $classPath['view']       = ROOT . DS . 'app' . DS . 'views' . DS . $className . '.class.php';
+
+    $classPath[] = ga_model($className);
+    $classPath[] = ga_controller($className);
+    $classPath[] = ga_lib($className);
     
     foreach ($classPath as $path){
         if (file_exists($path)) { include_once($path); }
