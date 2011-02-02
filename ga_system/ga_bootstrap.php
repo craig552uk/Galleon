@@ -13,8 +13,8 @@ include_once (ROOT . DS . 'ga_system' . DS . 'ga_includes.lib.php');
 /* 
     Load configuration files
 */
-include_once (ROOT . DS . 'ga_config.php');
-include_once (ROOT . DS . 'ga_errors.php');
+include_once (ga_config('galleon'));
+include_once (ga_config('errors'));
 
 /*
     Call functions
