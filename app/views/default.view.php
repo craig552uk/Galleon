@@ -1,5 +1,6 @@
-<?php ga_show_view('head'); ?>
+<?php include(ga_view('head')); ?>
 
 <h1><?php echo $title; ?></h1>
 
-<?php ga_show_view('tail'); ?>
+<?php include(ga_view('tail')); ?>
+

@@ -8,6 +8,7 @@
     Load Galleon Class and Library files
 */
 include_once (ROOT . DS . 'ga_system' . DS . 'ga_common.lib.php');
+include_once (ROOT . DS . 'ga_system' . DS . 'ga_includes.lib.php');
 
 /* 
     Load configuration files

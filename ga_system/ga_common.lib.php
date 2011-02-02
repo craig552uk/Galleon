@@ -7,7 +7,6 @@
     ga_parse_url()                  // Interprets URL
     ga_call_hook($url)              // Call requested class function
     ga_show_error($code)            // Show error message
-    ga_show_view($name, $data)      // Show view
     __autoload($className)          // Magic function for dynamic class loading
 */
 
@@ -107,34 +106,17 @@ function ga_call_hook($url){
 }
 
 /*
-    Show a view
-    
-    @param  string  View name
-    @param  array   Array of data to be accessible from within view
-*/
-function ga_show_view($name, $data=array()){
-
-    // Redefine array as single variables
-    foreach ($data as $k => $v) { $$k = $v; }
-
-    // Find and display view
-    $path = ROOT . DS . 'app' . DS . 'views' . DS. $name;
-    if (file_exists($path . '.view.php'))   { include($path . '.view.php'); }
-    if (file_exists($path . '.php'))        { include($path . '.php'); }
-    if (file_exists($path . '.html'))       { include($path . '.html'); }
-    if (file_exists($path . '.htm'))        { include($path . '.htm'); }
-    if (file_exists($path))                 { include($path); }
-}
-
-/*
     Call an error defined in ga_errors.php
 */
 function ga_show_error($code){
     global $error;
 
     if (isset($error[$code])){
-        // Format error through view
-        ga_show_view('error', $error[$code]);
+        // Extract variables to local scope
+        extract($error[$code]);
+        
+        // Include error view
+        include(ga_view('error'));
     }else{
         // Return default error
         ga_show_error(000);
