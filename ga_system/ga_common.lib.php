@@ -94,6 +94,15 @@ function ga_call_hook($url){
                 ga_show_error(404);
             }
         }
+    }elseif($url['class']==""){
+        // No path requested
+        
+        // Create default controller
+        $controller = new HomeController;
+        
+        // Call index function
+        call_user_func_array(array($controller, 'index'), array());
+        
     }else{
         // No valid controller class
         if ($url['class']=='error'){
