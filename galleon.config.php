@@ -11,12 +11,11 @@
     Application Meta Settings
 */
 
-$config['meta']['name']              = 'Galleon';
-$config['meta']['author']            = 'Craig Russell';
-$config['meta']['email']             = 'craig@craig-russell.co.uk';
-$config['meta']['version']           = 0.1;
-$config['meta']['description']       = 'Galleon PHP MVC Framework';
-$config['meta']['keywords']          = 'php, mvc, framework';
+$config['meta']['name']              = 'Galleon';                       // Application name
+$config['meta']['author']            = 'Craig Russell';                 // Author Name - SEO
+$config['meta']['email']             = 'craig@craig-russell.co.uk';     // Contact Email
+$config['meta']['version']           = 0.1;                             // Version Number
+$config['meta']['description']       = 'Galleon PHP MVC Framework';     // Application Description - SEO
 
 
 /*

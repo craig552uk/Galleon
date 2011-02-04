@@ -68,6 +68,7 @@ function ga_parse_url(){
     If class or function cannot be found show 404 error
 */
 function ga_call_hook($url){
+    global $config;
 
     // Generate controller class name
     $controllerName = ucwords($url['class']).'Controller';
