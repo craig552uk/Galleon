@@ -10,6 +10,7 @@
 include_once (ROOT . DS . 'ga_system' . DS . 'ga_common.lib.php');
 include_once (ROOT . DS . 'ga_system' . DS . 'ga_includes.lib.php');
 include_once (ROOT . DS . 'ga_system' . DS . 'ga_resources.lib.php');
+include_once (ROOT . DS . 'ga_system' . DS . 'ga_manifest.lib.php');
 
 /* 
     Load configuration files
