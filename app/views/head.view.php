@@ -1,6 +1,6 @@
 <?php global $config; /* Get config data within scope */?>
 <!DOCTYPE html>
-<html lang="en" <?php ga_manifest(); ?>>
+<html lang="en" class="no-js" <?php ga_manifest(); ?>>
 <head>    
     <!-- Document meta data -->
     <title><?php echo $title; ?></title>
