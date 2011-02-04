@@ -17,10 +17,7 @@
     <link rel="apple-touch-icon" href="<?php ga_res_img('apple-touch-icon'); ?>">
     
     <!-- Style sheets -->
-    <link rel="stylesheet" href="<?php ga_res_css('meyer-reset-2-0b2'); ?>">
-    <link rel="stylesheet" href="<?php ga_res_css('desktop-styles'); ?>">
-    <link rel="stylesheet" href="<?php ga_res_css('ipad-styles'); ?>">
-    <link rel="stylesheet" href="<?php ga_res_css('smartphone-styles'); ?>">
+    <link rel="stylesheet" href="<?php ga_res_css('styles'); ?>">
     
     <!-- Load head.js http://headjs.com -->
     <script src="<?php ga_res_js('head'); ?>"></script>
