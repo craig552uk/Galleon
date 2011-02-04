@@ -27,7 +27,7 @@ $config['galleon']['seo_urls']          = true;
 
 /*
     Offline caching
-    Configure manifest file /manifest.cache.php
+    Configure manifest file /cache-manifest.php
 */
 
 $config['galleon']['manifest_cache']    = true;
