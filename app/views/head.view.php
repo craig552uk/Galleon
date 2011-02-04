@@ -30,6 +30,11 @@
         head.js('<?php ga_res_js("jquery-1.4.4"); ?>')
             .js('<?php ga_res_js("jquery-ui-1.8.9.custom"); ?>');
         
+        /* Load print protector script for IE */
+        if (head.browser.ie)  {
+            head.js('<?php ga_res_js("iepp.1-6-2"); ?>');		
+        }
+            
         /* Wait for scripts to load then... */
         head.ready(function() {
            
