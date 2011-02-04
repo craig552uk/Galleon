@@ -42,3 +42,29 @@ AddType application/x-chrome-extension crx
 AddType video/ogg                      ogg ogv
 AddType video/mp4                      mp4
 AddType video/webm                     webm
+
+# Custom Error Messages
+#  Client Request Errors
+ErrorDocument 400 /Galleon/error/400
+ErrorDocument 401 /Galleon/error/401
+ErrorDocument 402 /Galleon/error/402
+ErrorDocument 403 /Galleon/error/403
+ErrorDocument 404 /Galleon/error/404
+ErrorDocument 405 /Galleon/error/405
+ErrorDocument 406 /Galleon/error/406
+ErrorDocument 407 /Galleon/error/407
+ErrorDocument 408 /Galleon/error/408
+ErrorDocument 409 /Galleon/error/409
+ErrorDocument 410 /Galleon/error/410
+ErrorDocument 411 /Galleon/error/411
+ErrorDocument 412 /Galleon/error/412
+ErrorDocument 413 /Galleon/error/413
+ErrorDocument 414 /Galleon/error/414
+ErrorDocument 415 /Galleon/error/415
+#  Server Errors
+ErrorDocument 500 /Galleon/error/500
+ErrorDocument 501 /Galleon/error/501
+ErrorDocument 502 /Galleon/error/502
+ErrorDocument 503 /Galleon/error/503
+ErrorDocument 504 /Galleon/error/504
+ErrorDocument 505 /Galleon/error/505
