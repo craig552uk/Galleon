@@ -25,3 +25,10 @@ $config['galleon']['domain']            = 'http://localhost';
 $config['galleon']['root_path']         = '/Galleon';
 $config['galleon']['seo_urls']          = true;
 
+/*
+    Offline caching
+    Configure manifest file /manifest.cache.php
+*/
+
+$config['galleon']['manifest_cache']    = true;
+
