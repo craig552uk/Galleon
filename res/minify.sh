@@ -17,14 +17,17 @@ FILELIST="minify.$$.tmp"
 
 COMPORESSOR="yuicompressor-2.4.2.jar"
 
+MINCSS="css/styles.min.css"
+
+echo -n "" > $MINCSS
+
 ls $CSS | grep -v min > $FILELIST
 while read LINE
 do
     OLD="$CSS/$LINE"
-    NEW=` echo "$CSS/$LINE" | sed 's/.css/.min.css/g'`
     
-    echo "$OLD -> $NEW"
-    java -jar yuicompressor-2.4.2.jar $OLD > $NEW
+    echo "$OLD -> $MINCSS"
+    java -jar yuicompressor-2.4.2.jar $OLD >> $MINCSS
     
 done < $FILELIST
 
