@@ -22,14 +22,13 @@
     <link rel="stylesheet" href="<?php ga_res_css('ipad-styles'); ?>">
     <link rel="stylesheet" href="<?php ga_res_css('smartphone-styles'); ?>">
     
-    <!-- Configure and load head.js http://headjs.com -->
-    <script>var head_conf = { screens: [640, 1024, 1280, 1680] };</script>
+    <!-- Load head.js http://headjs.com -->
     <script src="<?php ga_res_js('head'); ?>"></script>
     
     <script>
         /* Load scripts in parallel, execute in order */
-        head.js('<?php ga_res_js("jquery-1.4.4"); ?>');
-        head.js('<?php ga_res_js("jquery-ui-1.8.9.custom"); ?>');
+        head.js('<?php ga_res_js("jquery-1.4.4"); ?>')
+            .js('<?php ga_res_js("jquery-ui-1.8.9.custom"); ?>');
         
         /* Wait for scripts to load then... */
         head.ready(function() {
