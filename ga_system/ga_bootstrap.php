@@ -17,6 +17,7 @@ include_once (ROOT . DS . 'ga_system' . DS . 'ga_manifest.lib.php');
 */
 include_once (ga_config('galleon'));
 include_once (ga_config('errors'));
+include_once (ga_config('mysql'));
 
 /*
     Call functions
