@@ -4,6 +4,9 @@
     Common functions
     
     h($string)                      // Alias of htmlspecialchars
+    u($string)                      // Alias of urlencode
+    ga_url($class, $function, $params, $global)
+                                    // Generates URLs
     ga_parse_url()                  // Interprets URL
     ga_call_hook($url)              // Call requested class function
     ga_show_error($code)            // Show error message
