@@ -24,7 +24,8 @@
     
     <script>
         /* Load scripts in parallel, execute in order */
-        head.js('<?php ga_res_js("jquery-1.4.4"); ?>')
+        head.js('<?php ga_res_js("goog_a"); ?>')
+            .js('<?php ga_res_js("jquery-1.4.4"); ?>')
             .js('<?php ga_res_js("jquery-ui-1.8.9.custom"); ?>');
         
         /* Load print protector script for IE */
