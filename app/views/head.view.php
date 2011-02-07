@@ -1,6 +1,10 @@
 <?php global $config; /* Get config data within scope */?>
 <!DOCTYPE html>
-<html lang="en" class="no-js" <?php ga_manifest(); ?>>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6" <?php ga_manifest(); ?>> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7" <?php ga_manifest(); ?>> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8" <?php ga_manifest(); ?>> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9" <?php ga_manifest(); ?>> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js" <?php ga_manifest(); ?>> <!--<![endif]-->
 <head>    
     <!-- Document meta data -->
     <title><?php echo $title; ?></title>
