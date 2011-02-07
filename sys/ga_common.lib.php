@@ -18,6 +18,67 @@ function h($string){
 }
 
 /*
+    Alias of htmlspecialchars
+*/
+function u($string){
+    return urlencode($string);
+}
+
+/*
+    Echo an appropriately formatted url
+    Echos either SEO format or non-SEO format as per config settings
+    
+    @param  class       The controller class name (auto strips *Controller)
+    @param  function    The controller function
+    @param  params      Array of parameters
+    @apram  relative    Return global URL. Default false
+*/
+
+function ga_url($class="", $function="", $params=array(), $global=false){
+    global $config;
+    $class = strtolower(u($class));
+    $function = strtolower(u($function));
+    array_walk($params, 'walk_enclow');
+    $params = array_values($params);
+    
+    // Build host string
+    if (!$global){
+        $path = $config['galleon']['root_path'].'/';
+    }else{
+        $path = $config['galleon']['domain'].$config['galleon']['root_path'].'/';
+    }
+    
+    if ($config['galleon']['seo_urls']){
+        // Build SEO URL
+        if ($class != ""){
+            $path = $path.$class.'/';
+            if($function != ""){
+                $path = $path.$function.'/';
+                foreach($params as $p){
+                    $path = $path.$p.'/';
+                }
+            }
+        }
+    }else{
+        // Build Non-SEO URL
+        if ($class != ""){
+            $path = $path.'?c='.$class.'&';
+            if($function != ""){
+                $path = $path.'f='.$function.'&';
+                foreach($params as $k => $p){
+                    $path = $path.'p'.$k.'='.$p.'&';
+                }
+            }
+        }   
+    }
+    // Remove trailing amphersand
+    $path = trim($path, '&');
+    
+    // Return path
+    echo $path;
+}
+
+/*
     Interprets URL
         Either SEO friendly
         Or Standard query string
@@ -147,4 +208,10 @@ function __autoload($className){
     }
 }
 
-
+/*
+    URL encode string and change to lower case
+    For use by array_walk
+*/
+function walk_enclow(&$str){
+    $str = strtolower(u($str));
+}
