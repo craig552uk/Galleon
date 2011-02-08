@@ -27,7 +27,7 @@ do
     OLD="$CSS/$LINE"
     
     echo "$OLD -> $MINCSS"
-    java -jar yuicompressor-2.4.2.jar $OLD >> $MINCSS
+    java -jar yuicompressor-2.4.2.jar $OLD |sed 's/and/and /g' >> $MINCSS
     
 done < $FILELIST
 
