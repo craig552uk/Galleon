@@ -73,7 +73,7 @@ class ga_url{
         @parma  $full   Return full url
     */
     public function img($name, $full=false){
-        $path_base  = ROOT . DS . 'res' . DS. 'img/';
+        $path_base  = ROOT . DS . 'res' . DS . 'img' . DS;
         $url_base   = self::base($full).'/res/img/';
         $extensions = array('.png','.jpg','.jpeg','.gif','.ico','');
         
@@ -98,7 +98,7 @@ class ga_url{
         @parma  $full   Return full url
     */
     public function css($name, $full=false){
-        $path_base  = ROOT . DS . 'res' . DS. 'css/';
+        $path_base  = ROOT . DS . 'res' . DS . 'css' . DS;
         $url_base   = self::base($full).'/res/css/';
         $extensions = array('.min.css','.css','');
         
@@ -123,7 +123,7 @@ class ga_url{
         @parma  $full   Return full url
     */
     public function js($name, $full=false){
-        $path_base  = ROOT . DS . 'res' . DS. 'js/';
+        $path_base  = ROOT . DS . 'res' . DS . 'js' . DS;
         $url_base   = self::base($full).'/res/js/';
         $extensions = array('.min.class.js','.min.lib.js','min.js','.class.js','.lib.js','.js','');
         
