@@ -2,7 +2,7 @@
 
 /*
     Include functions
-    Functions that return local file names of files to be included with include()
+    Functions that return local file paths for files to be included with include()
 */
 
 /*
@@ -10,7 +10,7 @@
     
     @param  string  Model file name
 */
-function ga_model($name){
+function path_model($name){
     $path = ROOT . DS . 'app' . DS . 'models' . DS. $name;
     if (file_exists($path . 'Model.class.php')) { return $path . 'Model.class.php'; }
     if (file_exists($path . '.class.php'))      { return $path . '.class.php'; }
@@ -23,7 +23,7 @@ function ga_model($name){
     
     @param  string  View file name
 */
-function ga_view($name){
+function path_view($name){
     $path = ROOT . DS . 'app' . DS . 'views' . DS. $name;
     if (file_exists($path . 'View.php'))    { return $path . 'View.php'; }
     if (file_exists($path . '.view.php'))   { return $path . '.view.php'; }
@@ -38,7 +38,7 @@ function ga_view($name){
     
     @param  string  Controller file name
 */
-function ga_controller($name){
+function path_controller($name){
     $path = ROOT . DS . 'app' . DS . 'controllers' . DS. $name;
     if (file_exists($path . 'Controller.class.php'))    { return $path . 'Controller.class.php'; }
     if (file_exists($path . '.class.php'))              { return $path . '.class.php'; }
@@ -51,7 +51,7 @@ function ga_controller($name){
     
     @param  string  Config file name
 */
-function ga_config($name){
+function path_config($name){
     $path = ROOT . DS . $name;
     if (file_exists($path . '.config.php')) { return $path . '.config.php'; }
     if (file_exists($path))                 { return $path; }
@@ -62,7 +62,7 @@ function ga_config($name){
     
     @param  string  Library file name
 */
-function ga_lib($name){
+function path_lib($name){
     $path = ROOT . DS . 'lib' . DS. $name;
     if (file_exists($path . '.lib.php'))    { return $path . '.lib.php'; }
     if (file_exists($path . '.class.php'))  { return $path . '.class.php'; }
