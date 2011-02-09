@@ -1,0 +1,52 @@
+/* Styles applied to fix browsers lacking certian features ------------------ */
+
+/* No Javascript Support ---------------------------------------------------- */
+.no-js {}
+
+/* No Gradient Support ------------------------------------------------------ */
+.no-gradient {}
+
+/* No RGBA Support ---------------------------------------------------------- */
+.no-rgba {}
+
+/* No Opacity Support ------------------------------------------------------- */
+.no-opacity {}
+
+/* No Text Shadow Support --------------------------------------------------- */
+.no-textshadow {}
+
+/* No Multiple Background Support ------------------------------------------- */
+.no-multiplebgs {}
+
+/* No Box Shadow Support ---------------------------------------------------- */
+.no-boxshadow {}
+
+/* No Border Image Support -------------------------------------------------- */
+.no-borderimage {}
+
+/* No Border Radius Support ------------------------------------------------- */
+.no-borderradius {}
+
+/* No Reflections Support --------------------------------------------------- */
+.no-reflections {}
+
+/* No Transforms Support ---------------------------------------------------- */
+.no-transforms {}
+
+/* No Trnasitions Support --------------------------------------------------- */
+.no-transitions {}
+
+/* Generic IE --------------------------------------------------------------- */
+.ie {}
+
+/* Internet Explorer 6 ------------------------------------------------------ */
+.ie6 {}
+
+/* Internet Explorer 7 ------------------------------------------------------ */
+.ie7 {}
+
+/* Internet Explorer 8 ------------------------------------------------------ */
+.ie8 {}
+
+/* Internet Explorer 9 ------------------------------------------------------ */
+.ie9 {}
