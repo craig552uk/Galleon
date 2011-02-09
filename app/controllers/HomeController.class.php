@@ -17,7 +17,7 @@ class HomeController extends Controller{
         echo $this->path->view('error')."<br/>";
         echo $this->path->controller('Home')."<br/>";
         echo $this->path->config('mysql')."<br/>";
-        echo $this->path->lib('Html')."<br/>";
+        echo $this->path->lib('Mysql')."<br/>";
     }
     
     function htmltest(){

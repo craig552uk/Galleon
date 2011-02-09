@@ -19,11 +19,22 @@ class ga_path {
         @param  string  Model file name
     */
     function model($name){
-        $path = ROOT . DS . 'app' . DS . 'models' . DS. $name;
-        if (file_exists($path . 'Model.class.php')) { return $path . 'Model.class.php'; }
-        if (file_exists($path . '.class.php'))      { return $path . '.class.php'; }
-        if (file_exists($path . '.php'))            { return $path . '.php'; }
-        if (file_exists($path))                     { return $path; }
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . $name . 'Model.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . mb_convert_case($name, MB_CASE_LOWER) . 'Model.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . mb_convert_case($name, MB_CASE_TITLE) . 'Model.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . $name . '.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . $name . '.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . $name;
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . mb_convert_case($name, MB_CASE_LOWER);
+        $paths[] = ROOT . DS . 'app' . DS . 'model' . DS . mb_convert_case($name, MB_CASE_TITLE);
+        
+        foreach ($paths as $path){
+            if (file_exists($path)) { return $path; }
+        }
     }
 
     /*
@@ -32,13 +43,28 @@ class ga_path {
         @param  string  View file name
     */
     function view($name){
-        $path = ROOT . DS . 'app' . DS . 'views' . DS. $name;
-        if (file_exists($path . 'View.php'))    { return $path . 'View.php'; }
-        if (file_exists($path . '.view.php'))   { return $path . '.view.php'; }
-        if (file_exists($path . '.php'))        { return $path . '.php'; }
-        if (file_exists($path . '.html'))       { return $path . '.html'; }
-        if (file_exists($path . '.htm'))        { return $path . '.htm'; }
-        if (file_exists($path))                 { return $path; }
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . $name . 'View.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_LOWER) . 'View.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_TITLE) . 'View.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . $name . '.view.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.view.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.view.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . $name . '.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . $name . '.html';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.html';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.html';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . $name . '.htm';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.htm';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.htm';
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . $name;
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_LOWER);
+        $paths[] = ROOT . DS . 'app' . DS . 'views' . DS . mb_convert_case($name, MB_CASE_TITLE);
+        
+        foreach ($paths as $path){
+            if (file_exists($path)) { return $path; }
+        }
     }
 
     /*
@@ -47,11 +73,22 @@ class ga_path {
         @param  string  Controller file name
     */
     function controller($name){
-        $path = ROOT . DS . 'app' . DS . 'controllers' . DS. $name;
-        if (file_exists($path . 'Controller.class.php'))    { return $path . 'Controller.class.php'; }
-        if (file_exists($path . '.class.php'))              { return $path . '.class.php'; }
-        if (file_exists($path . '.php'))                    { return $path . '.php'; }
-        if (file_exists($path))                             { return $path; }
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . $name . 'Controller.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . mb_convert_case($name, MB_CASE_LOWER) . 'Controller.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . mb_convert_case($name, MB_CASE_TITLE) . 'Controller.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . $name . '.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.class.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . $name . '.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.php';
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . $name;
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . mb_convert_case($name, MB_CASE_LOWER);
+        $paths[] = ROOT . DS . 'app' . DS . 'controllers' . DS . mb_convert_case($name, MB_CASE_TITLE);
+        
+        foreach ($paths as $path){
+            if (file_exists($path)) { return $path; }
+        }
     }
 
     /*
@@ -60,9 +97,19 @@ class ga_path {
         @param  string  Config file name
     */
     function config($name){
-        $path = ROOT . DS . $name;
-        if (file_exists($path . '.config.php')) { return $path . '.config.php'; }
-        if (file_exists($path))                 { return $path; }
+        $paths[] = ROOT . DS . $name . '.config.php';
+        $paths[] = ROOT . DS . mb_convert_case($name, MB_CASE_LOWER) . '.config.php';
+        $paths[] = ROOT . DS . mb_convert_case($name, MB_CASE_TITLE) . '.config.php';
+        $paths[] = ROOT . DS . $name . '.php';
+        $paths[] = ROOT . DS . mb_convert_case($name, MB_CASE_LOWER) . '.php';
+        $paths[] = ROOT . DS . mb_convert_case($name, MB_CASE_TITLE) . '.php';
+        $paths[] = ROOT . DS . $name;
+        $paths[] = ROOT . DS . mb_convert_case($name, MB_CASE_LOWER);
+        $paths[] = ROOT . DS . mb_convert_case($name, MB_CASE_TITLE);
+        
+        foreach ($paths as $path){
+            if (file_exists($path)) { return $path; }
+        }
     }
 
     /*
@@ -71,11 +118,22 @@ class ga_path {
         @param  string  Library file name
     */
     function lib($name){
-        $path = ROOT . DS . 'lib' . DS. $name;
-        if (file_exists($path . '.lib.php'))    { return $path . '.lib.php'; }
-        if (file_exists($path . '.class.php'))  { return $path . '.class.php'; }
-        if (file_exists($path . '.php'))        { return $path . '.php'; }
-        if (file_exists($path))                 { return $path; }
+        $paths[] = ROOT . DS . 'lib' . DS . $name . '.class.php';
+        $paths[] = ROOT . DS . 'lib' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.class.php';
+        $paths[] = ROOT . DS . 'lib' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.class.php';
+        $paths[] = ROOT . DS . 'lib' . DS . $name . '.lib.php';
+        $paths[] = ROOT . DS . 'lib' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.lib.php';
+        $paths[] = ROOT . DS . 'lib' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.lib.php';
+        $paths[] = ROOT . DS . 'lib' . DS . $name . '.php';
+        $paths[] = ROOT . DS . 'lib' . DS . mb_convert_case($name, MB_CASE_LOWER) . '.php';
+        $paths[] = ROOT . DS . 'lib' . DS . mb_convert_case($name, MB_CASE_TITLE) . '.php';
+        $paths[] = ROOT . DS . 'lib' . DS . $name;
+        $paths[] = ROOT . DS . 'lib' . DS . mb_convert_case($name, MB_CASE_LOWER);
+        $paths[] = ROOT . DS . 'lib' . DS . mb_convert_case($name, MB_CASE_TITLE);
+        
+        foreach ($paths as $path){
+            if (file_exists($path)) { return $path; }
+        }
     }
 
 }

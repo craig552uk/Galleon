@@ -1,7 +1,7 @@
-<?php include(Path::view('head')); ?>
+<?php include(ga_path::view('head')); ?>
 
 <h1><?php echo $title; ?></h1>
 <p><?php echo $message; ?></p>
 
-<?php include(Path::view('tail')); ?>
+<?php include(ga_path::view('tail')); ?>
 
