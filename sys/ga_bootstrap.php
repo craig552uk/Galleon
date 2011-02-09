@@ -16,9 +16,9 @@ include_once (ROOT . DS . 'sys' . DS . 'ga_path.class.php');
 /* 
     Load configuration files
 */
-include_once (Path::config('galleon'));
-include_once (Path::config('errors'));
-include_once (Path::config('mysql'));
+include_once (ga_path::config('galleon'));
+include_once (ga_path::config('errors'));
+include_once (ga_path::config('mysql'));
 
 /*
     Call functions

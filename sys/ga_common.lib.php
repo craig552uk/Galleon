@@ -190,7 +190,7 @@ function ga_show_error($code){
         extract($error[$code]);
         
         // Include error view
-        include(Path::view('error'));
+        include(ga_path::view('error'));
     }else{
         // Return default error
         ga_show_error(000);
@@ -202,9 +202,9 @@ function ga_show_error($code){
 */
 function __autoload($className){    
 
-    $classPath[] = Path::model($className);
-    $classPath[] = Path::controller($className);
-    $classPath[] = Path::lib($className);
+    $classPath[] = ga_path::model($className);
+    $classPath[] = ga_path::controller($className);
+    $classPath[] = ga_path::lib($className);
     
     foreach ($classPath as $path){
         if (file_exists($path)) { include_once($path); }

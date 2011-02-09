@@ -12,6 +12,6 @@ class Controller {
     function __construct(){
         /* Create objects */
         $this->html = new ga_html();
-        $this->path = new Path();
+        $this->path = new ga_path();
     }
 }

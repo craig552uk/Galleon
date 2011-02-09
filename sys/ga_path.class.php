@@ -11,7 +11,7 @@
     lib($name)
 */
 
-class Path {
+class ga_path {
 
     /*
         Get a model file path
