@@ -17,6 +17,9 @@ class HomeController extends Controller{
         echo $this->url->base(true)."<br/>";
         echo $this->url->get('Monkey','Feed',array('Apple','Banana','Orange'))."<br/>";
         echo $this->url->get('Monkey','Feed',array('Apple','Banana','Orange'),true)."<br/>";
+        echo $this->url->img('apple-touch-icon.png',true)."<br/>";
+        echo $this->url->css('styles.min.css',true)."<br/>";
+        echo $this->url->js('goog_a.min.js',true)."<br/>";
     }   
     
     function pathtest(){
