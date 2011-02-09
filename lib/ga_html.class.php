@@ -33,7 +33,7 @@
 
 */
 
-class Html {
+class ga_html {
 
     /*
         Draw an anchor
