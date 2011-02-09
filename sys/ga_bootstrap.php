@@ -11,6 +11,7 @@ include_once (ROOT . DS . 'sys' . DS . 'ga_common.lib.php');
 include_once (ROOT . DS . 'sys' . DS . 'ga_includes.lib.php');
 include_once (ROOT . DS . 'sys' . DS . 'ga_resources.lib.php');
 include_once (ROOT . DS . 'sys' . DS . 'ga_manifest.lib.php');
+include_once (ROOT . DS . 'sys' . DS . 'ga_controller.class.php');
 
 /* 
     Load configuration files
@@ -25,3 +26,8 @@ include_once (ga_config('mysql'));
 
 // Request Call Hook
 ga_call_hook(ga_parse_url());
+
+/*
+    Create objects
+*/
+
