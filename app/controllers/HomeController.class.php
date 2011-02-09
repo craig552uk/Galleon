@@ -12,7 +12,15 @@ class HomeController extends Controller{
         include(path_view('home'));
     }
 
-    function test(){
+    function pathtest(){
+        echo $this->path->model('Model')."<br/>";
+        echo $this->path->view('error')."<br/>";
+        echo $this->path->controller('Home')."<br/>";
+        echo $this->path->config('mysql')."<br/>";
+        echo $this->path->lib('Html')."<br/>";
+    }
+    
+    function htmltest(){
         
         $this->html->a('http://www.google.com','Google<');
         $this->html->link('http://www.google.com','Google<');

@@ -7,9 +7,11 @@ class Controller {
 
     /* HTML object */
     protected $html = NULL;
+    protected $path = NULL;
 
     function __construct(){
-        /* Create object */
+        /* Create objects */
         $this->html = new Html();
+        $this->path = new Path();
     }
 }
