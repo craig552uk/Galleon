@@ -10,7 +10,7 @@
     Also adds wrapper function m() for mysql_real_escape_string()
 */
 
-class ga_mysql extends mysqli{
+class Mysql extends mysqli{
 
     /*
         Constructor
