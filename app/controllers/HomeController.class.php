@@ -12,6 +12,13 @@ class HomeController extends Controller{
         include(path_view('home'));
     }
 
+    function urltest(){
+        echo $this->url->base(false)."<br/>";
+        echo $this->url->base(true)."<br/>";
+        echo $this->url->get('Monkey','Feed',array('Apple','Banana','Orange'))."<br/>";
+        echo $this->url->get('Monkey','Feed',array('Apple','Banana','Orange'),true)."<br/>";
+    }   
+    
     function pathtest(){
         echo $this->path->model('Model')."<br/>";
         echo $this->path->view('error')."<br/>";
