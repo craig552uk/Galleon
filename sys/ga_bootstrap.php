@@ -12,6 +12,7 @@ include_once (ROOT . DS . 'sys' . DS . 'ga_resources.lib.php');
 include_once (ROOT . DS . 'sys' . DS . 'ga_manifest.lib.php');
 include_once (ROOT . DS . 'sys' . DS . 'ga_controller.class.php');
 include_once (ROOT . DS . 'sys' . DS . 'ga_path.class.php');
+include_once (ROOT . DS . 'sys' . DS . 'ga_html.class.php');
 
 /* 
     Load configuration files
