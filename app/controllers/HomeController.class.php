@@ -9,7 +9,7 @@ class HomeController extends Controller{
 
     function index(){        
         $title = "Galleon";
-        include(path_view('home'));
+        include($this->path->view('home'));
     }
 
     function urltest(){
@@ -23,7 +23,7 @@ class HomeController extends Controller{
     }   
     
     function pathtest(){
-        echo $this->path->model('Model')."<br/>";
+        echo $this->path->model('My')."<br/>";
         echo $this->path->view('error')."<br/>";
         echo $this->path->controller('Home')."<br/>";
         echo $this->path->config('mysql')."<br/>";

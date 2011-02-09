@@ -79,11 +79,21 @@ function ga_parse_url(){
 */
 function ga_call_hook($url){
     global $config;
+    
+    $error = new ga_error();
 
     // Generate controller class name
     $controllerName = ucwords($url['class']).'Controller';
     
-    if (class_exists($controllerName)){
+    if(empty($url['class'])){
+        
+        // Create default controller
+        $controller = new HomeController;  
+              
+        // Call index function
+        call_user_func_array(array($controller, 'index'), array());
+    
+    }elseif (class_exists($controllerName)){
     
         // Create requested class object
         $controller = new $controllerName;
@@ -101,45 +111,18 @@ function ga_call_hook($url){
                 
             }else{
                 // Call 404 Error
-                ga_show_error(404);
+                $error->show(404);
             }
         }
-    }elseif($url['class']==""){
-        // No path requested
-        
-        // Create default controller
-        $controller = new HomeController;
-        
-        // Call index function
-        call_user_func_array(array($controller, 'index'), array());
-        
     }else{
         // No valid controller class
         if ($url['class']=='error'){
             // Call error
-            ga_show_error($url['function']);
+            $error->show($url['function']);
         }else{
             // 404 Error
-            ga_show_error(404);
+            $error->show(404);
         }
-    }    
-}
-
-/*
-    Call an error defined in ga_errors.php
-*/
-function ga_show_error($code){
-    global $error;
-
-    if (isset($error[$code])){
-        // Extract variables to local scope
-        extract($error[$code]);
-        
-        // Include error view
-        include(ga_path::view('error'));
-    }else{
-        // Return default error
-        ga_show_error(000);
     }    
 }
     
