@@ -5,11 +5,8 @@
     
     h($string)                      // Alias of htmlspecialchars
     u($string)                      // Alias of urlencode
-    ga_url($class, $function, $params, $global)
-                                    // Generates URLs
     ga_parse_url()                  // Interprets URL
     ga_call_hook($url)              // Call requested class function
-    ga_show_error($code)            // Show error message
     __autoload($className)          // Magic function for dynamic class loading
 */
 
@@ -56,7 +53,7 @@ function ga_parse_url(){
     }else{
     
         /*  Breat apart Query String urls
-            galleon.com/?c=class&f=function&p1=param1&p2=param2 */
+            galleon.com/?c=class&f=function&p0=param0&p1=param1 */
             
         // Preserve $_GET
         $urlData         = $_GET;
