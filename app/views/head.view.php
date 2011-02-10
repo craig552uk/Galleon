@@ -17,24 +17,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Icon images -->
-    <link rel="shortcut icon" href="<?php ga_res_img('favicon'); ?>">
-    <link rel="apple-touch-icon" href="<?php ga_res_img('apple-touch-icon'); ?>">
+    <link rel="shortcut icon" href="<?php echo $this->url->img('favicon'); ?>">
+    <link rel="apple-touch-icon" href="<?php echo $this->url->img('apple-touch-icon'); ?>">
     
     <!-- Style sheets -->
-    <link rel="stylesheet" href="<?php ga_res_css('styles'); ?>">
+    <link rel="stylesheet" href="<?php echo $this->url->css('styles'); ?>">
     
     <!-- Load head.js http://headjs.com -->
-    <script src="<?php ga_res_js('head'); ?>"></script>
+    <script src="<?php echo $this->url->js('head'); ?>"></script>
     
     <script>
         /* Load scripts in parallel, execute in order */
-        head.js('<?php ga_res_js("goog_a"); ?>')
-            .js('<?php ga_res_js("jquery-1.4.4"); ?>')
-            .js('<?php ga_res_js("jquery-ui-1.8.9.custom"); ?>');
+        head.js('<?php echo $this->url->js("goog_a"); ?>')
+            .js('<?php echo $this->url->js("jquery-1.4.4"); ?>')
+            .js('<?php echo $this->url->js("jquery-ui-1.8.9.custom"); ?>');
         
         /* Load print protector script for IE */
         if (head.browser.ie)  {
-            head.js('<?php ga_res_js("iepp.1-6-2"); ?>');		
+            head.js('<?php echo $this->url->js("iepp.1-6-2"); ?>');		
         }
             
         /* Wait for scripts to load then... */
