@@ -125,7 +125,7 @@ class ga_url{
     public function js($name, $full=false){
         $path_base  = ROOT . DS . 'res' . DS . 'js' . DS;
         $url_base   = self::base($full).'/res/js/';
-        $extensions = array('.min.class.js','.min.lib.js','min.js','.class.js','.lib.js','.js','');
+        $extensions = array('.min.class.js','.min.lib.js','.min.js','.class.js','.lib.js','.js','');
         
         /* Build file names list */
         foreach($extensions as $extension){
