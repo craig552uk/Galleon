@@ -3,6 +3,8 @@
     Built in error controller class
 */
 class ga_error extends Controller{
+
+    function index(){ self::show(000); }
     
     function show($code){
         global $error;
@@ -15,7 +17,7 @@ class ga_error extends Controller{
             include($this->path->view('error'));
         }else{
             // Return default error
-            self::show(000);
+            self::index();
         } 
     }
     

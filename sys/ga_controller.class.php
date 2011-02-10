@@ -3,13 +3,17 @@
     Base class for controllers
 */
 
-class Controller {
+abstract class Controller {
 
     /* HTML object */
     protected $html = NULL;
     protected $path = NULL;
     protected $url  = NULL;
 
+    /* Require declaration of index in implementations */
+    abstract function index();
+
+    /* Constructor */
     function __construct(){
         /* Create objects */
         $this->html = new ga_html();
