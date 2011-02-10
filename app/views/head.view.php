@@ -29,7 +29,7 @@
     <script>
         /* Load scripts in parallel, execute in order */
         head.js('<?php echo $this->url->js("goog_a"); ?>')
-            .js('<?php echo $this->url->js("jquery-1.4.4"); ?>')
+            .js('<?php echo $this->url->js("jquery-1.5"); ?>')
             .js('<?php echo $this->url->js("jquery-ui-1.8.9.custom"); ?>');
         
         /* Load print protector script for IE */
