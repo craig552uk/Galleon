@@ -27,7 +27,7 @@
 
 CACHE MANIFEST
 
-# Expires <?php echo date(DATE_RFC1123)."\n\r"; ?>
+# Expires <?php echo date(DATE_RFC1123)."\n\r"; /* Not strictly needed, but never-the-less */ ?>
 
 CACHE:
 # Icon Images
