@@ -1,8 +1,8 @@
 Galleon - PHP MVC Framework
 ================================================================================
 
-Author: Craig Russell
-Email:  <craig@craig-russell.co.uk>
+Author: Craig Russell   
+Email:  <craig@craig-russell.co.uk>   
 Web:    <http://www.craig-russell.co.uk>
 
 
