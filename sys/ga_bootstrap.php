@@ -5,6 +5,7 @@
 */
 
 /* Core Classes and Libraries */
+include_once (ROOT . DS . 'sys' . DS . 'ga_rest_emulator.php');
 include_once (ROOT . DS . 'sys' . DS . 'ga_controller.class.php');
 include_once (ROOT . DS . 'sys' . DS . 'ga_path.class.php');
 include_once (ROOT . DS . 'sys' . DS . 'ga_url.class.php');
